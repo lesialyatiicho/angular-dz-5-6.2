@@ -1,0 +1,111 @@
+.resume-card {
+  max-width: 780px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 22px;
+
+  background: linear-gradient(135deg, #ffffff 0%, #f8f6ff 100%);
+  border: 1px solid #e8e0ff;
+
+  box-shadow:
+    0 8px 24px rgba(123, 97, 255, 0.08),
+    0 2px 8px rgba(123, 97, 255, 0.05);
+
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #2e2a3b;
+  transition: 0.3s ease;
+}
+
+.resume-card:hover {
+  box-shadow:
+    0 12px 32px rgba(123, 97, 255, 0.12),
+    0 4px 14px rgba(123, 97, 255, 0.06);
+}
+
+
+
+
+
+.resume-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resume-photo {
+  width: 220px;
+
+  border-radius: 18px;
+  object-fit: cover;
+  border: 3px solid #d9ccff;
+  box-shadow: 0 6px 14px rgba(132, 92, 255, 0.15);
+}
+
+.resume-main h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #4b3ca4;
+}
+
+.resume-city {
+  color: #7c739e;
+  font-size: 15px;
+}
+
+
+
+
+
+.resume-section {
+  margin-top: 26px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e3dafb;
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+}
+
+.resume-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+
+  color: #5a4ecc;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  border-left: 5px solid #c3b5ff;
+  padding-left: 10px;
+}
+
+
+
+
+
+.resume-section p,
+.resume-section li {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #3f3a55;
+}
+
+.resume-section ul {
+  padding-left: 20px;
+  margin-top: 6px;
+}
+
+
+
+
+
+.resume-section li {
+  transition: 0.2s ease;
+  padding-left: 3px;
+}
+
+.resume-section li:hover {
+  color: #6a46ff;
+  transform: translateX(4px);
+}

@@ -1,0 +1,31 @@
+<div class="resume-card">
+  <div class="resume-header">
+    <img [src]="photoUrl" alt="My photo" class="resume-photo">
+
+    <div class="resume-main">
+      <h1>{{ fullName }}</h1>
+      <p class="resume-city">{{ city }}</p>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>Контакты</h2>
+    <p><strong>Телефон:</strong> {{ phone }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+  </div>
+
+  <div class="resume-section">
+    <h2>Опыт</h2>
+    <p>{{ experience }}</p>
+  </div>
+
+  <div class="resume-section">
+    <h2>Навыки</h2>
+    <ul>
+      @for (skill of skills; track skill) {
+        <li>{{ skill }}</li>
+      }
+    </ul>
+  </div>
+</div>
+
