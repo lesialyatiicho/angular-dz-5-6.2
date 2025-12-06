@@ -1,26 +1,86 @@
-<div class="resume-card">
+<div class="resume-card" [ngStyle]="{ padding: cardPadding }">
   <div class="resume-header">
-    <img [src]="photoUrl" alt="My photo" class="resume-photo">
+    <img [src]="photoUrl" alt="My photo" class="resume-photo" />
 
     <div class="resume-main">
-      <h1>{{ fullName }}</h1>
-      <p class="resume-city">{{ city }}</p>
-    </div>
-  </div>
+      <h1
+        [ngClass]="{ 'resume-name-highlight': isHighlighted }"
+        [ngStyle]="{ color: nameColor }"
+      >
+        {{ fullName | uppercase }}
+      </h1>
+
+
+
+      <p class="resume-city">
+        {{ city | lowercase }}
+      </p>
+
+  <p class="resume-date">
+    Resume updated: {{ today | date:'dd.MM.yyyy' }}
+  </p>
+</div>
+</div>
 
   <div class="resume-section">
-    <h2>Контакты</h2>
-    <p><strong>Телефон:</strong> {{ phone }}</p>
+    <h2>Contacts</h2>
+    <p><strong>Phone number:</strong> {{ phone }}</p>
     <p><strong>Email:</strong> {{ email }}</p>
   </div>
 
+
+
+
   <div class="resume-section">
-    <h2>Опыт</h2>
+    <h2>Personal Info</h2>
+
+    <p><strong>Expected salary:</strong> {{ salary | currency:'GBP' }}</p>
+
+    <p><strong>Learning progress:</strong> {{ progress | percent }}</p>
+
+    @if (showEnglish) {
+      <p>Your English level is shown below:</p>
+    }
+
+    @switch (englishLevel) {
+      @case ('B2') {
+        <p>English Level: B2 (Upper-Intermediate)</p>
+      }
+
+      @case ('B1') {
+        <p>English Level: B1</p>
+      }
+
+      @case ('A2') {
+        <p>English Level: A2</p>
+      }
+
+      @default {
+        <p>Level not specified</p>
+      }
+    }
+
+
+    <p><strong>Languages you speak:</strong></p>
+    <ul>
+      @for (lang of languages; track lang) {
+        <li>{{ lang }}</li>
+      }
+    </ul>
+
+  </div>
+
+
+
+
+
+  <div class="resume-section">
+    <h2>Experience</h2>
     <p>{{ experience }}</p>
   </div>
 
   <div class="resume-section">
-    <h2>Навыки</h2>
+    <h2>Skills</h2>
     <ul>
       @for (skill of skills; track skill) {
         <li>{{ skill }}</li>
